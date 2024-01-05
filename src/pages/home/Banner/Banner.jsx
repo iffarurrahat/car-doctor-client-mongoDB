@@ -3,7 +3,7 @@ const Banner = () => {
     return (
         < div className="carousel w-full font-inter h-[350px] md:h-[600px]" >
             <div id="slide1" className="carousel-item relative w-full">
-                <img className="w-full h-full" src="https://i.ibb.co/hYy6MVw/banner-1.jpg" />
+                <img src="https://i.ibb.co/hYy6MVw/banner-1.jpg" className="w-full h-full"/>
                 <div className="absolute flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)] pl-3 md:pl-16">
                     <div>
                         <h2 className="text-3xl md:text-6xl text-white font-bold md:w-4/5 lg:w-1/2">Affordable Price For Car Servicing</h2>
@@ -37,7 +37,7 @@ const Banner = () => {
                 </div>
             </div>
             <div id="slide3" className="carousel-item relative w-full">
-                <img src="https://i.ibb.co/B2TTLJ8/banner-3.jpg" className="w-full" />
+                <img src="https://i.ibb.co/B2TTLJ8/banner-3.jpg" className="w-full " />
                 <div className="absolute flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)] pl-3 md:pl-16">
                     <div>
                         <h2 className="text-3xl md:text-6xl text-white font-bold md:w-4/5 lg:w-1/2">Affordable Price For Car Servicing</h2>
