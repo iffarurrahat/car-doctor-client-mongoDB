@@ -2,7 +2,7 @@ import Container from "../../../ui/Container";
 
 const AboutUs = () => {
     return (
-        <div className="hero min-h-screen bg-base-200 font-inter">
+        <div className="hero min-h-screen font-inter mt-10">
             <Container>
                 <div className="hero-content flex-col lg:flex-row">
                     <div className='lg:w-1/2 relative ml-5 md:md:ml-0'>
