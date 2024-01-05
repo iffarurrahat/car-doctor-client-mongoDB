@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 import Container from "../../ui/Container";
 import navLogo from "../../assets/nav_logo.svg"
-import './Navbar.css'
 
 const Navbar = () => {
     const links = <>
@@ -55,7 +54,7 @@ const Navbar = () => {
     return (
         <>
             <Container>
-                <div className="navbar p-0 font-inter mt-1">
+                <div className="navbar p-0 font-inter py-1">
                     <div className="navbar-start">
                         <div className="dropdown">
                             <label tabIndex={0} className="cursor-pointer lg:hidden">
@@ -66,7 +65,7 @@ const Navbar = () => {
                             </ul>
                         </div>
                         <a className="text-xl md:text-3xl font-extrabold ml-auto lg:ml-0">
-                            <img className="w-2/3 md:w-full" src={navLogo} alt="" />
+                            <img className="w-2/3 md:w-20" src={navLogo} alt="" />
                         </a>
                     </div>
                     <div className="navbar-center hidden lg:flex custom_nav_style">
