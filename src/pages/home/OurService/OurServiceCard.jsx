@@ -1,7 +1,8 @@
 import { IoMdArrowForward } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const OurServiceCard = ({ service }) => {
-    const { img, title, price } = service || {}
+    const { _id, img, title, price } = service || {}
     return (
         <div className="card bg-base-100 shadow hover:border hover:duration-300">
             <figure className="p-5">
@@ -12,7 +13,9 @@ const OurServiceCard = ({ service }) => {
                     <h2 className="text-xl mb-2">{title}</h2>
                     <p className="text-lg text-primary">Price: ${price}</p>
                 </div>
-                <button><IoMdArrowForward className="text-primary text-xl mt-auto" /></button>
+                <Link to={`/checkout/${_id}`} className="mt-auto">
+                    <button><IoMdArrowForward className="text-primary text-xl" /></button>
+                </Link>
             </div>
         </div>
     );

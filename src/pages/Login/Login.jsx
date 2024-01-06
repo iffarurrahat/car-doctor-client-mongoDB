@@ -1,10 +1,35 @@
 import { Link } from "react-router-dom";
 import Container from "../../ui/Container";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
 
+    const { signIn } = useContext(AuthContext);
+
     const handleLogin = event => {
-        event.preventdefault();
+        event.preventDefault();
+
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        // console.log(email, password);
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+
+                if (user) {
+                    Swal.fire({
+                        title: "Successful!",
+                        text: "You are Successfully Login!",
+                        icon: "success"
+                    });
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
 
     return (
@@ -43,7 +68,7 @@ const Login = () => {
 
                             </div>
                         </form>
-                        <p className='my-4 text-center'>Already have an account ? <Link className='text-primary font-bold' to='/signup'>Sign Up</Link> </p>
+                        <p className='my-4 text-center'>New to Car Doctor ? <Link className='text-primary font-bold' to='/signup'>Sign Up</Link> </p>
                     </div>
                 </div>
             </Container>

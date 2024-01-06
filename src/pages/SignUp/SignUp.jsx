@@ -1,7 +1,52 @@
 import { Link } from "react-router-dom";
 import Container from "../../ui/Container";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+import { updateProfile } from "firebase/auth";
+import Swal from "sweetalert2";
+
 
 const SignUp = () => {
+
+    const { createUser } = useContext(AuthContext)
+
+    const handleSignUp = event => {
+        event.preventDefault();
+
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+
+                if (user) {
+                    Swal.fire({
+                        title: "Successful!",
+                        text: "You are Successfully Create Account!",
+                        icon: "success"
+                    });
+                }
+
+                // update profile
+                updateProfile(result.user, {
+                    displayName: name,
+                })
+                    .then(() => {
+                        console.log('Updated profile');
+                    })
+                    .catch()
+
+                // reset from
+                form.reset();
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
     return (
         <div className="font-inter">
             {/*<-!------signUp or register----->*/}
@@ -14,7 +59,7 @@ const SignUp = () => {
                     <div className="card-body flex-1 border mt-[35%] md:mt-0">
                         <h1 className="text-3xl font-bold text-center mb-10">Sign Up</h1>
                         {/* <-!------ from -----> */}
-                        <form className="w-full md:w-4/5 mx-auto">
+                        <form onSubmit={handleSignUp} className="w-full md:w-4/5 mx-auto">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Your Name</span>
@@ -40,9 +85,6 @@ const SignUp = () => {
                                 <input className="btn bg-primary text-white hover:text-primary hover:font-semibold cursor-pointer rounded" type="submit" value="Submit" />
                             </div>
                             <p className="text-center my-6">Or Sign In with</p>
-                            <div>
-
-                            </div>
                         </form>
                         <p className='my-4 text-center'>Have an account ? <Link className='text-primary font-bold' to='/login'>Login</Link> </p>
                     </div>
@@ -53,3 +95,6 @@ const SignUp = () => {
 };
 
 export default SignUp;
+
+
+

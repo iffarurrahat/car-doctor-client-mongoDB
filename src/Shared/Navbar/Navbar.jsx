@@ -1,8 +1,17 @@
 import { NavLink } from "react-router-dom";
 import Container from "../../ui/Container";
 import navLogo from "../../assets/nav_logo.svg"
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleSignOut = () => {
+        logOut();
+    };
+
     const links = <>
         <li>
             <NavLink to="/" className={({ isActive, isPending }) =>
@@ -49,6 +58,39 @@ const Navbar = () => {
                         : "bg-inherit hover:bg-inherit"
             }>Contact</NavLink>
         </li>
+        {
+            user?.email ?
+                <>
+                    <li>
+                        <NavLink to="/bookings" className={({ isActive, isPending }) =>
+                            isActive
+                                ? "bg-inherit hover:bg-inherit text-primary font-bold"
+                                : isPending
+                                    ? "pending"
+                                    : "bg-inherit hover:bg-inherit"
+                        }>My Bookings</NavLink>
+                    </li>
+                    <li onClick={handleSignOut}>
+                        <NavLink to="/" className={({ isActive, isPending }) =>
+                            isActive
+                                ? "bg-inherit hover:bg-inherit"
+                                : isPending
+                                    ? "pending"
+                                    : "bg-inherit hover:bg-inherit"
+                        }>Logout</NavLink>
+                    </li>
+                </> :
+                <li>
+                    <NavLink to="/login" className={({ isActive, isPending }) =>
+                        isActive
+                            ? "bg-inherit hover:bg-inherit text-primary font-bold"
+                            : isPending
+                                ? "pending"
+                                : "bg-inherit hover:bg-inherit"
+                    }>Login</NavLink>
+                </li>
+
+        }
     </>
 
     return (

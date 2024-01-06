@@ -6,14 +6,12 @@ const OurService = () => {
 
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('/services.json')
+        fetch('http://localhost:5000/services')
             .then(res => res.json())
             .then(data => {
                 setServices(data);
             })
     }, []);
-
-    console.log(services);
 
     return (
         <div className="mt-24 font-inter">
@@ -25,8 +23,8 @@ const OurService = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 px-3 md:px-0">
                     {
-                        services.map(service => <OurServiceCard
-                            key={service._id}
+                        services.map((service, index) => <OurServiceCard
+                            key={index}
                             service={service}></OurServiceCard>)
                     }
                 </div>
