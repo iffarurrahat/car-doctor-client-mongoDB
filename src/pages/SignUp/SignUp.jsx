@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Container from "../../ui/Container";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -8,7 +8,9 @@ import Swal from "sweetalert2";
 
 const SignUp = () => {
 
-    const { createUser } = useContext(AuthContext)
+    const { createUser } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handleSignUp = event => {
         event.preventDefault();
@@ -41,6 +43,9 @@ const SignUp = () => {
 
                 // reset from
                 form.reset();
+
+                // navigation after signup
+                navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
                 console.log(error);
