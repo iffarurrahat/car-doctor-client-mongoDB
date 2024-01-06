@@ -1,5 +1,5 @@
 
-const Service = () => {
+const Blog = () => {
     return (
         <div>
             <p className="text-center font-bold my-16 md:my-32">Content upload soon..</p>
@@ -7,4 +7,4 @@ const Service = () => {
     );
 };
 
-export default Service;
+export default Blog;

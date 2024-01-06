@@ -23,15 +23,6 @@ const Navbar = () => {
             }>Home</NavLink>
         </li>
         <li>
-            <NavLink to="/about" className={({ isActive, isPending }) =>
-                isActive
-                    ? "bg-inherit hover:bg-inherit text-primary font-bold"
-                    : isPending
-                        ? "pending"
-                        : "bg-inherit hover:bg-inherit"
-            }>About</NavLink>
-        </li>
-        <li>
             <NavLink to="/service" className={({ isActive, isPending }) =>
                 isActive
                     ? "bg-inherit hover:bg-inherit text-primary font-bold"
@@ -41,6 +32,15 @@ const Navbar = () => {
             }>Service</NavLink>
         </li>
         <li>
+            <NavLink to="/about" className={({ isActive, isPending }) =>
+                isActive
+                    ? "bg-inherit hover:bg-inherit text-primary font-bold"
+                    : isPending
+                        ? "pending"
+                        : "bg-inherit hover:bg-inherit"
+            }>About</NavLink>
+        </li>
+        <li>
             <NavLink to="/blog" className={({ isActive, isPending }) =>
                 isActive
                     ? "bg-inherit hover:bg-inherit text-primary font-bold"
@@ -48,15 +48,6 @@ const Navbar = () => {
                         ? "pending"
                         : "bg-inherit hover:bg-inherit"
             }>Blog</NavLink>
-        </li>
-        <li>
-            <NavLink to="/contact" className={({ isActive, isPending }) =>
-                isActive
-                    ? "bg-inherit hover:bg-inherit text-primary font-bold"
-                    : isPending
-                        ? "pending"
-                        : "bg-inherit hover:bg-inherit"
-            }>Contact</NavLink>
         </li>
         {
             user?.email ?

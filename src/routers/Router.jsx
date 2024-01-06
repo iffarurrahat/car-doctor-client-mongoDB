@@ -8,6 +8,8 @@ import CheckOut from "../pages/CheckOut/CheckOut";
 import Bookings from "../pages/Bookings/Bookings";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import About from "../pages/About/About";
+import Blog from "../pages/Blog/Blog";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
             {
                 path: '/service',
                 element: <Service />
+            },
+            {
+                path: '/about',
+                element: <About />
+            },
+            {
+                path: '/blog',
+                element: <Blog />
             },
             {
                 path: '/checkout/:id',

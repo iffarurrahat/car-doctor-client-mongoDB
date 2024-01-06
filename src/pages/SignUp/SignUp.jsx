@@ -87,9 +87,9 @@ const SignUp = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <input className="btn bg-primary text-white hover:text-primary hover:font-semibold cursor-pointer rounded" type="submit" value="Submit" />
+                                <input className="btn bg-primary text-white hover:text-primary hover:font-semibold cursor-pointer rounded" type="submit" value="Signup" />
                             </div>
-                            <p className="text-center my-6">Or Sign In with</p>
+                            {/* <p className="text-center my-6">Or Sign In with</p> */}
                         </form>
                         <p className='my-4 text-center'>Have an account ? <Link className='text-primary font-bold' to='/login'>Login</Link> </p>
                     </div>

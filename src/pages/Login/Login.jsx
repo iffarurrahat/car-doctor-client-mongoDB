@@ -66,12 +66,9 @@ const Login = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <input className="btn bg-primary text-white hover:text-primary hover:font-semibold cursor-pointer rounded" type="submit" value="Submit" />
+                                <input className="btn bg-primary text-white hover:text-primary hover:font-semibold cursor-pointer rounded" type="submit" value="Login" />
                             </div>
-                            <p className="text-center my-6">Or Sign In with</p>
-                            <div>
-
-                            </div>
+                            {/* <p className="text-center my-6">Or Sign In with</p> */}
                         </form>
                         <p className='my-4 text-center'>New to Car Doctor ? <Link className='text-primary font-bold' to='/signup'>Sign Up</Link> </p>
                     </div>
