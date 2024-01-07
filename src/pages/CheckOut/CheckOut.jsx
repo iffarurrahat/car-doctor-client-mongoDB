@@ -28,7 +28,7 @@ const CheckOut = () => {
         }
         // console.log(booking);
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://car-doctor-server-n1lm9ftde-iffarur-rahats-projects.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
