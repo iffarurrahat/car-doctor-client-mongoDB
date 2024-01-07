@@ -3,6 +3,7 @@ import Container from "../../ui/Container";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const Login = () => {
 
@@ -19,18 +20,26 @@ const Login = () => {
         // console.log(email, password);
         signIn(email, password)
             .then(result => {
-                const user = result.user;
+                const loggedInUser = result.user;
+                const user = { email };
 
-                if (user) {
+                // <-!-----get access token---->
+                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+                    .then(res => {
+                        console.log(res.data);
+                        if (res.data.success) {
+                            // navigation after login
+                            navigate(location?.state ? location.state : '/');
+                        }
+                    })
+
+                if (loggedInUser) {
                     Swal.fire({
                         title: "Successful!",
                         text: "You are Successfully Login!",
                         icon: "success"
                     });
                 }
-
-                // navigation after login
-                navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
                 console.log(error);
