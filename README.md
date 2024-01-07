@@ -1,8 +1,21 @@
-# React + Vite
+# Projects Name: Car Doctor || For Car Servicing
+# Projects Live URL:  [Car Doctor](https://car-doctor-project-3da6c.web.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+Using Tool / Package:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- React-Router-DOM
+- Firebase
+- Node, Express, Mongodb
+- React-Icons
+- React-Rating
+- Sweetalert2
+- Tailwindcss
+- DaisyUI
+- Lottie-React
+- Axios
+
+
+Using Font-Family:
+- 'Inter', sans-serif
